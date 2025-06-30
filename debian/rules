@@ -19,10 +19,10 @@ DEB_CMAKE_OPTIONS ?= -DCMAKE_VERBOSE_MAKEFILE=ON \
                 -DWANT_DOCS_MAN=ON
 
 ADDONS = acodec audio image physfs ttf video
-ADDONS_INSTALL = $(ADDONS:%=debian/liballegro-%5.2t64.install)
+ADDONS_INSTALL = $(ADDONS:%=debian/liballegro-%5.2.install)
 ADDONS_DEV_INSTALL = $(ADDONS:%=debian/liballegro-%5-dev.install)
 
-debian/liballegro-%5.2t64.install: debian/liballegro-ADDON5.2t64.install.in debian/rules
+debian/liballegro-%5.2.install: debian/liballegro-ADDON5.2.install.in debian/rules
 	sed -e 's/ADDON/$*/g' < "$<" > "$@"
 
 debian/liballegro-%5-dev.install: debian/liballegro-ADDON5-dev.install.in debian/rules

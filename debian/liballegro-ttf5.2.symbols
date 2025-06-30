@@ -1,4 +1,4 @@
-liballegro_ttf.so.5.2 liballegro-ttf5.2t64 #MINVER#
+liballegro_ttf.so.5.2 liballegro-ttf5.2 #MINVER#
 * Build-depends-package: liballegro-ttf5-dev
  al_get_allegro_ttf_version@Base 2:5.0.6
  al_init_ttf_addon@Base 2:5.0.6
