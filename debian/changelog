@@ -1,3 +1,9 @@
+allegro5 (2:5.2.10.1+dfsg-1.1deepin1) unstable; urgency=medium
+
+  * Strip t64
+
+ -- Cryolitia <cryolitia@deepin.org>  Mon, 30 Jun 2025 14:44:39 +0800
+
 allegro5 (2:5.2.10.1+dfsg-1) unstable; urgency=medium
 
   * New upstream version 5.2.10.1+dfsg

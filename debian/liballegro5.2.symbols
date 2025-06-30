@@ -1,4 +1,4 @@
-liballegro.so.5.2 liballegro5.2t64 #MINVER#
+liballegro.so.5.2 liballegro5.2 #MINVER#
 * Build-Depends-Package: liballegro5-dev
  (regex|optional)"_al_*" 2:5.0.6
  al_acknowledge_drawing_halt@Base 2:5.2.0
@@ -586,7 +586,7 @@ liballegro.so.5.2 liballegro5.2t64 #MINVER#
  al_wait_for_vsync@Base 2:5.0.6
  al_x_set_initial_icon@Base 2:5.2.3.0
 #MISSING: 2:5.2.9.0# x11_xpm@Base 2:5.2.3.0
-liballegro_color.so.5.2 liballegro5.2t64 #MINVER#
+liballegro_color.so.5.2 liballegro5.2 #MINVER#
 * Build-Depends-Package: liballegro5-dev
  al_color_cmyk@Base 2:5.0.6
  al_color_cmyk_to_rgb@Base 2:5.0.6
@@ -627,7 +627,7 @@ liballegro_color.so.5.2 liballegro5.2t64 #MINVER#
  al_color_yuv_to_rgb@Base 2:5.0.6
  al_get_allegro_color_version@Base 2:5.0.6
  al_is_color_valid@Base 2:5.2.3.0
-liballegro_font.so.5.2 liballegro5.2t64 #MINVER#
+liballegro_font.so.5.2 liballegro5.2 #MINVER#
 * Build-Depends-Package: liballegro5-dev
  (regex|optional)"_al_*" 2:5.0.6
  al_create_builtin_font@Base 2:5.0.8
@@ -667,13 +667,13 @@ liballegro_font.so.5.2 liballegro5.2t64 #MINVER#
  al_register_font_loader@Base 2:5.0.6
  al_set_fallback_font@Base 2:5.2.0
  al_shutdown_font_addon@Base 2:5.0.6
-liballegro_main.so.5.2 liballegro5.2t64 #MINVER#
+liballegro_main.so.5.2 liballegro5.4 #MINVER#
 * Build-Depends-Package: liballegro5-dev
-liballegro_memfile.so.5.2 liballegro5.2t64 #MINVER#
+liballegro_memfile.so.5.2 liballegro5.2 #MINVER#
 * Build-Depends-Package: liballegro5-dev
  al_get_allegro_memfile_version@Base 2:5.0.6
  al_open_memfile@Base 2:5.0.6
-liballegro_primitives.so.5.2 liballegro5.2t64 #MINVER#
+liballegro_primitives.so.5.2 liballegro5.2 #MINVER#
 * Build-Depends-Package: liballegro5-dev
  (regex|optional)"_al_*" 2:5.0.6
  al_calculate_arc@Base 2:5.0.6

@@ -1,2 +1,2 @@
 # Only contains methods on the MacOS version of Allegro, empty on Debian.
-liballegro5.2t64 binary: shared-library-lacks-prerequisites
+liballegro5.2 binary: shared-library-lacks-prerequisites

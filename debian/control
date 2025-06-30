@@ -37,10 +37,7 @@ Homepage: https://liballeg.org/
 Vcs-Git: https://salsa.debian.org/games-team/allegro5.git
 Vcs-Browser: https://salsa.debian.org/games-team/allegro5
 
-Package: liballegro5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro5.2
-Breaks: liballegro5.2 (<< ${source:Version})
+Package: liballegro5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -58,7 +55,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version}),
+         liballegro5.2 (= ${binary:Version}),
          libc-dev,
          libgl-dev,
          libglu1-mesa-dev,
@@ -89,16 +86,13 @@ Description: development files for the Allegro 5 library
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-acodec5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-acodec5.2
-Breaks: liballegro-acodec5.2 (<< ${source:Version})
+Package: liballegro-acodec5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: audio codec addon for the Allegro 5 library
  This package provides the audio codec addon for the Allegro 5 library.
  This addon allows you to load audio sample formats.
@@ -115,7 +109,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-acodec5.2t64 (= ${binary:Version}),
+         liballegro-acodec5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libopenal-dev,
          libopus-dev,
@@ -134,15 +128,12 @@ Description: header files for the Allegro 5 audio codec addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-audio5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-audio5.2
-Breaks: liballegro-audio5.2 (<< ${source:Version})
+Package: liballegro-audio5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: audio addon for the Allegro 5 library
  This package provides the audio addon for the Allegro 5 library. This
  addon allows you to play sounds in your Allegro 5 programs.
@@ -159,7 +150,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-audio5.2t64 (= ${binary:Version}),
+         liballegro-audio5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libopenal-dev,
          libpulse-dev
@@ -174,15 +165,12 @@ Description: header files for the Allegro 5 audio addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-dialog5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-dialog5.2
-Breaks: liballegro-dialog5.2 (<< ${source:Version})
+Package: liballegro-dialog5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: dialog addon for the Allegro 5 library
  This package provides the dialog addon for the Allegro 5 library. This
  addon allows you to show dialog boxes.
@@ -199,7 +187,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-dialog5.2t64 (= ${binary:Version}),
+         liballegro-dialog5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libgtk-3-dev
 Description: header files for the Allegro 5 dialog addon
@@ -213,15 +201,12 @@ Description: header files for the Allegro 5 dialog addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-image5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-image5.2
-Breaks: liballegro-image5.2 (<< ${source:Version})
+Package: liballegro-image5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: image addon for the Allegro 5 library
  This package provides the image addon for the Allegro 5 library. Provides
  support for loading image file formats.
@@ -238,7 +223,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-image5.2t64 (= ${binary:Version}),
+         liballegro-image5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libjpeg-dev,
          libpng-dev,
@@ -254,15 +239,12 @@ Description: header files for the Allegro 5 image addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-physfs5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-physfs5.2
-Breaks: liballegro-physfs5.2 (<< ${source:Version})
+Package: liballegro-physfs5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: physfs addon for the Allegro 5 library
  This package provides the physfs addon for the Allegro 5 library. This
  addon provides an interface to the PhysicsFS library, allowing you to
@@ -281,7 +263,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-physfs5.2t64 (= ${binary:Version}),
+         liballegro-physfs5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libphysfs-dev
 Description: header files for the Allegro 5 physfs addon
@@ -295,15 +277,12 @@ Description: header files for the Allegro 5 physfs addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-ttf5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-ttf5.2
-Breaks: liballegro-ttf5.2 (<< ${source:Version})
+Package: liballegro-ttf5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: ttf addon for the Allegro 5 library
  This package provides the ttf addon for the Allegro 5 library. This addon
  allows you to load and use ttf fonts in your Allegro 5 programs.
@@ -320,7 +299,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-ttf5.2t64 (= ${binary:Version}),
+         liballegro-ttf5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          libfreetype-dev
 Description: header files for the Allegro 5 ttf addon
@@ -334,15 +313,12 @@ Description: header files for the Allegro 5 ttf addon
  Although it is not backwards compatible with earlier versions, it still
  occupies the same niche and retains a familiar style.
 
-Package: liballegro-video5.2t64
-Provides: ${t64:Provides}
-Replaces: liballegro-video5.2
-Breaks: liballegro-video5.2 (<< ${source:Version})
+Package: liballegro-video5.2
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         liballegro5.2t64 (= ${binary:Version})
+         liballegro5.2 (= ${binary:Version})
 Description: video addon for the Allegro 5 library
  This package provides the video addon for the Allegro 5 library. This addon
  allows you to load and display videos in your Allegro 5 programs.
@@ -359,7 +335,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         liballegro-video5.2t64 (= ${binary:Version}),
+         liballegro-video5.2 (= ${binary:Version}),
          liballegro5-dev (= ${binary:Version}),
          liballegro-audio5-dev (= ${binary:Version}),
          libtheora-dev,

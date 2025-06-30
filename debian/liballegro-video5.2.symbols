@@ -1,4 +1,4 @@
-liballegro_video.so.5.2 liballegro-video5.2t64 #MINVER#
+liballegro_video.so.5.2 liballegro-video5.2 #MINVER#
 * Build-depends-package: liballegro-video5-dev
  (regex|optional)"_al_*" 2:5.2.0
  al_close_video@Base 2:5.2.0
