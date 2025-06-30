@@ -1,0 +1,3 @@
+fix-manpages.patch
+fix-manpage-generation-script.patch
+use-debians-dejavu-font.patch

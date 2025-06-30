@@ -1,0 +1,6 @@
+liballegro_acodec.so.5.2 liballegro-acodec5.2t64 #MINVER#
+* Build-depends-package: liballegro-acodec5-dev
+ (regex|optional)"_al_*" 2:5.0.6
+ al_get_allegro_acodec_version@Base 2:5.0.6
+ al_init_acodec_addon@Base 2:5.0.6
+ al_is_acodec_addon_initialized@Base 2:5.2.6.0

@@ -1,5 +1,396 @@
-template-repository (1.0-1) unstable; urgency=medium
+allegro5 (2:5.2.10.1+dfsg-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 5.2.10.1+dfsg
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Andreas Rönnquist <gusnan@debian.org>  Thu, 09 Jan 2025 14:52:42 +0100
+
+allegro5 (2:5.2.10.0+dfsg-1) unstable; urgency=medium
+
+  [ Alexandre Detiste ]
+  * set Rules-Requires-Root: no
+
+  [ Andreas Rönnquist ]
+  * Remove more files from orig.tar
+  * New upstream version 5.2.10.0+dfsg
+  * Remove patch fix-building-reproducible-1540 - applied upstream
+  * Update symbols file
+  * Remove unused lintian overrides
+  * Fix multiarch install location for cmake package config
+  * Remove deleting files in build, already deleted from tarball
+  * Add a d/clean
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 29 Nov 2024 15:21:22 +0100
+
+allegro5 (2:5.2.9.1+dfsg-2) unstable; urgency=medium
+
+  * Add patch to build reproducible (Closes: #1064648)
+  * Fix mismatched override package-name-doesnt-match-sonames
+  * Upgrade to Standards Versin 4.7.0 (No changes required)
+  * Add myself to copyright
+  * Acknowledge Non-maintainer upload (Closes: #1061885)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 03 May 2024 12:28:35 +0200
+
+allegro5 (2:5.2.9.1+dfsg-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.  Closes: #1061885
+
+ -- Steve Langasek <vorlon@debian.org>  Wed, 28 Feb 2024 00:52:15 +0000
+
+allegro5 (2:5.2.9.1+dfsg-1) unstable; urgency=medium
+
+  * Update watch file
+  * New upstream version 5.2.9.1+dfsg
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Sat, 20 Jan 2024 15:33:19 +0100
+
+allegro5 (2:5.2.9.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 5.2.9.0+dfsg
+  * Fix watchfile
+  * Remove patch 0004-Use-CLOCK_REALTIME-instead-of-CLOCK_MONOTONIC.patch,
+    applied upstream
+  * Add cmake Config-mode files
+  * Update symbol files
+  * Remove lintian-overrides file, not needed
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Sun, 26 Nov 2023 22:05:19 +0100
+
+allegro5 (2:5.2.8.0+dfsg-2) unstable; urgency=medium
+
+  * Fix watch file
+  * Don't error out if trying to remove non-existing files - fixes building
+    after a successful build (Closes: #1049622)
+  * Don't depend/b-depend on obsolete packages (Thanks lintian\!)
+  * Upgrade to Standards Version 4.6.2 (No changes required)
+  * Add upstream contact field to copyright
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 01 Sep 2023 15:47:32 +0200
+
+allegro5 (2:5.2.8.0+dfsg-1) unstable; urgency=medium
+
+  [ Andreas Rönnquist ]
+  * Repackage upstream version 5.2.8.0+dfsg - Remove the music from
+    the Cosmic Protector demo which is non-dfsg
+  * Fix watch file
+  * Update watchfile to fix lintian debian-watch-not-mangling-version
+  * Add a README.source mentioning cosmic protector license
+  * Add a Files-Excluded field to d/copyright
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 06 Dec 2022 17:59:12 +0100
+
+allegro5 (2:5.2.8.0-2) unstable; urgency=medium
+
+  * Add patch to fix fullscreen not working as it should
+  * Upgrade to Standards Version 4.6.1 (No changes required)
+  * Add lintian override for html documentation
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 19 Jul 2022 12:40:40 +0200
+
+allegro5 (2:5.2.8.0-1) unstable; urgency=medium
+
+  * New upstream version 5.2.8.0
+  * Update symbols files
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 08 Jun 2022 19:49:36 +0200
+
+allegro5 (2:5.2.7.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 12 to 13. + Drop check for DEB_BUILD_OPTIONS
+    containing "nocheck", since debhelper now does this.
+  * Update renamed lintian tag names in lintian overrides.
+  * Set upstream metadata fields: Bug-Submit, Security-Contact.
+  * Update standards version to 4.6.0, no changes needed.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+
+  [ Andreas Rönnquist ]
+  * Mark allegro5-doc Multi-Arch: foreign
+  * Add Build-Depends-Package fields for liballegro_color, liballegro_font,
+    liballegro_main, liballegro_memfile, liballegro_primitives
+  * Check DEB_BUILD_OPTIONS against nocheck
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 09 Mar 2022 16:52:20 +0100
+
+allegro5 (2:5.2.7.0-1) unstable; urgency=medium
+
+  * New upstream version 5.2.7.0
+  * Remove patch 0004-Migrate-GTK2-to-GTK3, applied upstream
+  * Remove patch 0005-Fix-warnings-in-make_doc, applied upstream
+  * Update symbols file
+  * Make liballegro-dialog5-dev depend on libgtk-3-dev instead
+    of libgtk2.0-dev
+  * Upgrade to Standards Version 4.5.1 (No changes required)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 27 Aug 2021 21:18:38 +0200
+
+allegro5 (2:5.2.6.0-3) unstable; urgency=medium
+
+  * Add patch to use GTK3 instead of GTK2 (Closes: #967247)
+  * Add Forwarded: not-needed to use-debians-dejavu-font patch
+  * Add patch 0005-Fix-warnings-in-make_doc.patch - As the name,
+    fixes build warnings from make_doc
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 27 Nov 2020 13:02:04 +0100
+
+allegro5 (2:5.2.6.0-2) unstable; urgency=medium
+
+  * Update patch due to font moved to package fonts-dejavu-core
+    (Closes: #961355)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Sat, 23 May 2020 17:42:44 +0200
+
+allegro5 (2:5.2.6.0-1) unstable; urgency=medium
+
+  * Update watch file
+  * New upstream version 5.2.6.0
+  * Remove patch fix_missing_PTHREAD_STACK_MIN_on_hurd, applied upstream
+  * Remove patch 0005-Convert-out-Python-files-to-Python3, applied upstream
+  * Add new symbols (addon_initialized for all addons)
+  * Update Standards Version to 4.5.0 (No changes required)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 11 Feb 2020 17:29:31 +0100
+
+allegro5 (2:5.2.5.0-3) unstable; urgency=medium
+
+  * Add patch to build using Python3 (Closes: #936116)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 11 Sep 2019 15:10:28 +0200
+
+allegro5 (2:5.2.5.0-2) unstable; urgency=medium
+
+  * Add patch to fix missing PTHREAD_STACK_MIN on hurd
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 27 Aug 2019 13:09:07 +0200
+
+allegro5 (2:5.2.5.0-1) unstable; urgency=medium
+
+  * New upstream version 5.2.5.0
+  * Remove patch 0004-opengl-fix-compilation-with-Mesa-18.2.5-and-later.patch
+    - applied upstream
+  * Update symbols file with new symbols
+  * Upgrade to Standards Version 4.4.0 (No changes required)
+  * Override lintian shared-lib-without-dependency-information
+    for empty allegro_main.so
+  * Migrate to Debhelper compat version 12
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Thu, 22 Aug 2019 12:22:24 +0200
+
+allegro5 (2:5.2.4.0-3) unstable; urgency=medium
+
+  * Add patch to fix compilation with Mesa 18.2.5 and later
+  * Add Build-Depends-Package to Symbols-files
+  * Update Standards Version to 4.2.1 (no changes required)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Mon, 10 Dec 2018 17:55:17 +0100
+
+allegro5 (2:5.2.4.0-2) unstable; urgency=medium
+
+  * Migrate git repo to salsa.d.o
+  * Use DEP-14 branch naming
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Fri, 16 Mar 2018 11:04:40 +0100
+
+allegro5 (2:5.2.4.0-1) unstable; urgency=medium
+
+  * New upstream version 5.2.4.0
+  * Fix lintian warning spelling-error-in-patch-description
+  * Update symbols file
+  * Remove trailing whitespace in d/control and d/changelog
+  * Bump Standards-Version to 4.1.3
+  * Use debhelper compat 11
+  * Fix lintian warning insecure-copyright-format-uri
+  * Fix lintian warning override_dh_auto_test-does-not-check-DEB_BUILD_OPTIONS
+  * Fix lintian debian-rules-uses-unnecessary-dh-argument --parallell
+  * Add upstream metadata file
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 14 Mar 2018 17:55:37 +0100
+
+allegro5 (2:5.2.3.0-1) unstable; urgency=medium
+
+  * Update watchfile for github
+  * New upstream version 5.2.3.0
+  * Add dependency on libwebp
+  * Install changelog from docs/src/changes-5.2.txt now, changes
+    file is removed from project root
+  * Update symbols files
+  * Replace Priority: extra with Priority: optional
+  * Don't duplicate Priority fields
+  * Update Standards-Version (No changes required)
+  * Remove autosuggest.js from one place in copyright
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Mon, 23 Oct 2017 14:44:45 +0200
+
+allegro5 (2:5.2.2-1) unstable; urgency=medium
+
+  [ Tobias Hansen ]
+  * New upstream release.
+  * Remove fix-fallback-path-max.patch, applied upstream.
+  * New Build-Depends: libenet-dev, libopus-dev, libopusfile-dev.
+  * Update symbols files with new symbols.
+  * Generate *.install files for addons from templates.
+  * Link with enet in compile_examples.sh.
+  * Use https urls for Vcs-* fields.
+
+  [ Andreas Rönnquist ]
+  * Add hardening flags to build.
+  * Remove unused lintian overrides.
+
+ -- Tobias Hansen <thansen@debian.org>  Mon, 02 Jan 2017 15:51:27 +0100
+
+allegro5 (2:5.2.0-2) unstable; urgency=medium
+
+  * Remove conflict of liballegro5-dev with liballegro4-dev and
+    liballegro-dev. (Closes: #824158)
+
+ -- Tobias Hansen <thansen@debian.org>  Tue, 21 Jun 2016 20:50:46 +0100
+
+allegro5 (2:5.2.0-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #704141).
+  * Add packages for the new video addon
+    (new build dependency libtheora-dev).
+  * Rename library packages from *5.0 to *5.2.
+  * The pkg-config package names lost the minor version
+    (e.g. allegro-5.pc instead of allegro-5.0.pc).
+  * Refresh patches.
+  * Remove require-directx_shaders.c-only-on-windows.patch, applied upstream.
+  * Bump Standards-Version to 3.9.8.
+  * Update symbols files due to new symbols: liballegro5.2.symbols,
+    liballegro-audio5.2.symbols and liballegro-dialog5.2.
+  * The symbol al_toggle_display_flag was removed from liballegro5.2.
+  * Update debian/watch.
+  * Update compile_examples.sh to include new examples.
+  * Update d/copyright.
+
+ -- Tobias Hansen <thansen@debian.org>  Wed, 27 Apr 2016 13:04:40 +0100
+
+allegro5 (2:5.0.11-2) unstable; urgency=medium
+
+  * Build depend on libpng-dev instead of libpng12-dev, since there
+    will be a libpng transition. (Closes: #810167)
+  * Add gbp.conf file to get orig tarball from pristine-tar by default.
+
+ -- Tobias Hansen <thansen@debian.org>  Wed, 13 Jan 2016 01:11:38 +0000
+
+allegro5 (2:5.0.11-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.6.
+
+ -- Tobias Hansen <thansen@debian.org>  Wed, 29 Apr 2015 16:35:57 +0200
+
+allegro5 (2:5.0.10-3) unstable; urgency=medium
+
+  [ Andreas Rönnquist ]
+  * Change my email address to @d.o.
+
+  [ Tobias Hansen ]
+  * Change Build-Dependency to libjpeg-dev for the libjpeg-turbo
+    transition (Closes: #763465).
+  * Add lintian-override for source-is-missing false positive.
+  * Bump Standards-Version to 3.9.5.
+
+ -- Tobias Hansen <thansen@debian.org>  Tue, 30 Sep 2014 22:42:21 +0200
+
+allegro5 (2:5.0.10-2) unstable; urgency=low
+
+  [ Andreas Rönnquist ]
+  * Add pandoc-data to Build-Depends-Indep (Closes: #724157)
+
+  [ Tobias Hansen ]
+  * Make Vcs-* fields in debian/control canonical.
+
+ -- Tobias Hansen <thansen@debian.org>  Mon, 23 Sep 2013 23:22:29 +0200
+
+allegro5 (2:5.0.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Delete patch fix-make-converters-py.patch,
+    was applied upstream.
+  * Remove unused lintian override hyphen-used-as-minus-sign.
+
+ -- Tobias Hansen <thansen@debian.org>  Mon, 17 Jun 2013 22:20:03 +0200
+
+allegro5 (2:5.0.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add patch fix-make-converters-py.patch:
+    - Fixes make_converters.py after enum ALLEGRO_PIXEL_FORMAT was
+      moved from bitmap.h to color.h.
+  * Refresh patches:
+    - fix-fallback-path-max.patch
+    - fix-manpage-generation-script.patch
+  * Add new symbols to symbols files:
+    - liballegro-dialog5.0.symbols:
+      al_init_native_dialog_addon
+      al_shutdown_native_dialog_addon
+    - liballegro5.0.symbols:
+      al_set_display_icons
+  * Add epoch to version numbers in symbol files.
+  * Install new headers.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+
+ -- Tobias Hansen <thansen@debian.org>  Sun, 24 Feb 2013 18:03:26 +0100
+
+allegro5 (2:5.0.8-1) unstable; urgency=low
+
+  [Tobias Hansen]
+  * New upstream release.
+  * Remove patches that were applied upstream:
+    - adjust-some-primitive-tests.patch
+    - fix-python-indent.patch
+    - rename-scanline_drawers.c-to-scanline_drawers.inc.patch
+    - add-file-generation-script.patch
+    - fix-prefixes-in-gl_ext_api.patch
+    - fix-al_fputc-on-big-endian.patch
+  * Modify patches that were partly applied upstream:
+    - fix-manpages.patch
+    - require-directx_shaders.c-only-on-windows.patch
+  * Add new symbol al_create_builtin_font to liballegro5.0.symbols.
+  * Move pandoc from Build-Depends to Build-Depends-Indep.
+
+  [Andreas Rönnquist]
+  * Update fix-fallback-path-max.patch to include all places where
+    PATH_MAX is used.
+
+ -- Tobias Hansen <thansen@debian.org>  Fri, 23 Nov 2012 22:58:21 +0100
+
+allegro5 (2:5.0.7-3) unstable; urgency=low
+
+  [Tobias Hansen]
+  * Make override_dh_installexamples an indep override. (Closes: #689365)
+  * Add patch fix-al_fputc-on-big-endian.patch:
+    - Fixes al_fputc on bigendian systems and makes the test suite succeed.
+      (Closes: #689369)
+  * Make liballegro5-dev and its reverse dependencies Priority: extra,
+    because it conflicts with liballegro4-dev.
+  * Change my email address in debian/control to the debian.org one.
+
+  [Andreas Rönnquist]
+  * Add patch fix-fallback-path-max.patch - fixes FTBFS on Hurd
+    (Closes: #689366)
+
+ -- Tobias Hansen <thansen@debian.org>  Sun, 07 Oct 2012 15:25:23 +0200
+
+allegro5 (2:5.0.7-2) unstable; urgency=low
+
+  * Lowercase the first words of short descriptions in debian/control.
+  * Include examples/data in allegro5-doc.
+  * Install examples more elegantly (list omitted files instead of
+    the included ones).
+  * Add comments to the override_dh_auto_configure target in debian/rules.
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Tue, 18 Sep 2012 01:04:22 +0200
+
+allegro5 (2:5.0.7-1) unstable; urgency=low
+
+  * Initial release (Closes: #612778)
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Wed, 22 Aug 2012 10:51:54 +0200

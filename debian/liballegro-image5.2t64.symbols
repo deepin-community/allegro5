@@ -1,0 +1,7 @@
+liballegro_image.so.5.2 liballegro-image5.2t64 #MINVER#
+* Build-depends-package: liballegro-image5-dev
+ (regex|optional)"_al_*" 2:5.0.6
+ al_get_allegro_image_version@Base 2:5.0.6
+ al_init_image_addon@Base 2:5.0.6
+ al_is_image_addon_initialized@Base 2:5.2.6.0
+ al_shutdown_image_addon@Base 2:5.0.6

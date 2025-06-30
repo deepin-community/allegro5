@@ -1,0 +1,16 @@
+Description: Use Debian's DejaVuSans font for the fonts test.
+ It is in the package fonts-dejavu-core.
+Author: Tobias Hansen <tobias.han@gmx.de>
+Forwarded: not-needed
+
+--- a/tests/test_fonts.ini
++++ b/tests/test_fonts.ini
+@@ -11,7 +11,7 @@
+ # arguments
+ bmp_filename=../examples/data/a4_font.tga
+ ascii_filename=../examples/data/fixed_font.tga
+-ttf_filename=../examples/data/DejaVuSans.ttf
++ttf_filename=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+ flags=ALLEGRO_NO_PREMULTIPLIED_ALPHA
+ 
+ [text]
