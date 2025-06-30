@@ -1,0 +1,7 @@
+version=4
+opts="\
+    compression=gz, \
+    dversionmangle=s/\+dfsg+(?:git)?[0-9]*(?:\+g[0-9a-f]*)//, \
+    repacksuffix=+dfsg, \
+    filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%@PACKAGE@-$1\+dfsg\-1.\tar.\gz%" \
+https://github.com/liballeg/allegro5/tags (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate

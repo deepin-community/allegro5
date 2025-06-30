@@ -1,0 +1,12 @@
+Allegro5
+--------
+
+The license of the Cosmic Protector music makes it non disitrbutable -
+See
+
+https://github.com/liballeg/allegro5/commit/390cf485a117269bc3cf2c0b4ba69f79659e8fdb
+
+That demo wasn't built in the Debian package, so I have simply removed those
+sound files from the repackaged source package.
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 06 Dec 2022 17:16:40 +0100

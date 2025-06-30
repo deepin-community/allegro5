@@ -1,15 +1,393 @@
-Source: template-repository
-Section: unknown
+Source: allegro5
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Tobias Hansen <thansen@debian.org>, Andreas Rönnquist <gusnan@debian.org>
+Build-Depends: dpkg-dev (>= 1.22.5), debhelper-compat (= 13),
+               cmake,
+               libdumb1-dev,
+               libenet-dev,
+               libflac-dev,
+               libfreetype-dev,
+               libgl-dev,
+               libglu1-mesa-dev,
+               libgtk-3-dev,
+               libjpeg-dev,
+               libopenal-dev,
+               libopus-dev,
+               libopusfile-dev,
+               libphysfs-dev,
+               libpng-dev,
+               libpulse-dev,
+               libtheora-dev,
+               libvorbis-dev,
+               libxext-dev,
+               libxxf86vm-dev,
+               libxrandr-dev,
+               libxinerama-dev,
+               libxpm-dev,
+               libwebp-dev,
+               fonts-dejavu-core,
+               python3,
+               indent
+Build-Depends-Indep: pandoc, pandoc-data | pandoc (<< 1.11.1-4)
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Section: libs
+Homepage: https://liballeg.org/
+Vcs-Git: https://salsa.debian.org/games-team/allegro5.git
+Vcs-Browser: https://salsa.debian.org/games-team/allegro5
 
-Package: template-repository
+Package: liballegro5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro5.2
+Breaks: liballegro5.2 (<< ${source:Version})
 Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: portable library for cross-platform game and multimedia development
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version}),
+         libc-dev,
+         libgl-dev,
+         libglu1-mesa-dev,
+         libice-dev,
+         libsm-dev,
+         libx11-dev,
+         libxcursor-dev,
+         libxext-dev,
+         libxinerama-dev,
+         libxpm-dev,
+         libxrandr-dev
+Recommends: liballegro-acodec5-dev,
+            liballegro-audio5-dev,
+            liballegro-dialog5-dev,
+            liballegro-image5-dev,
+            liballegro-physfs5-dev,
+            liballegro-ttf5-dev,
+            liballegro-video5-dev
+Suggests: allegro5-doc
+Description: development files for the Allegro 5 library
+ This package is needed to build programs using the Allegro 5 library.
+ Contains header files.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-acodec5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-acodec5.2
+Breaks: liballegro-acodec5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: audio codec addon for the Allegro 5 library
+ This package provides the audio codec addon for the Allegro 5 library.
+ This addon allows you to load audio sample formats.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-acodec5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-acodec5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libopenal-dev,
+         libopus-dev,
+         libpulse-dev,
+         libdumb1-dev,
+         libflac-dev,
+         libvorbis-dev
+Description: header files for the Allegro 5 audio codec addon
+ This package is required to build programs that use the Allegro 5 audio
+ codec addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-audio5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-audio5.2
+Breaks: liballegro-audio5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: audio addon for the Allegro 5 library
+ This package provides the audio addon for the Allegro 5 library. This
+ addon allows you to play sounds in your Allegro 5 programs.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-audio5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-audio5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libopenal-dev,
+         libpulse-dev
+Description: header files for the Allegro 5 audio addon
+ This package is required to build programs that use the Allegro 5 audio
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-dialog5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-dialog5.2
+Breaks: liballegro-dialog5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: dialog addon for the Allegro 5 library
+ This package provides the dialog addon for the Allegro 5 library. This
+ addon allows you to show dialog boxes.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-dialog5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-dialog5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libgtk-3-dev
+Description: header files for the Allegro 5 dialog addon
+ This package is required to build programs that use the Allegro 5 dialog
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-image5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-image5.2
+Breaks: liballegro-image5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: image addon for the Allegro 5 library
+ This package provides the image addon for the Allegro 5 library. Provides
+ support for loading image file formats.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-image5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-image5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libjpeg-dev,
+         libpng-dev,
+         libwebp-dev
+Description: header files for the Allegro 5 image addon
+ This package is required to build programs that use the Allegro 5 image
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-physfs5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-physfs5.2
+Breaks: liballegro-physfs5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: physfs addon for the Allegro 5 library
+ This package provides the physfs addon for the Allegro 5 library. This
+ addon provides an interface to the PhysicsFS library, allowing you to
+ mount virtual file-systems (e.g., archives) and access files as if they
+ were physically on the file-system.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-physfs5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-physfs5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libphysfs-dev
+Description: header files for the Allegro 5 physfs addon
+ This package is required to build programs that use the Allegro 5 physfs
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-ttf5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-ttf5.2
+Breaks: liballegro-ttf5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: ttf addon for the Allegro 5 library
+ This package provides the ttf addon for the Allegro 5 library. This addon
+ allows you to load and use ttf fonts in your Allegro 5 programs.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-ttf5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-ttf5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         libfreetype-dev
+Description: header files for the Allegro 5 ttf addon
+ This package is required to build programs that use the Allegro 5 ttf
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-video5.2t64
+Provides: ${t64:Provides}
+Replaces: liballegro-video5.2
+Breaks: liballegro-video5.2 (<< ${source:Version})
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         liballegro5.2t64 (= ${binary:Version})
+Description: video addon for the Allegro 5 library
+ This package provides the video addon for the Allegro 5 library. This addon
+ allows you to load and display videos in your Allegro 5 programs.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: liballegro-video5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         liballegro-video5.2t64 (= ${binary:Version}),
+         liballegro5-dev (= ${binary:Version}),
+         liballegro-audio5-dev (= ${binary:Version}),
+         libtheora-dev,
+Description: header files for the Allegro 5 video addon
+ This package is required to build programs that use the Allegro 5 video
+ addon.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.
+
+Package: allegro5-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         fonts-dejavu-core
+Description: documentation for the Allegro 5 library
+ This package contains the Allegro documentation in various formats,
+ FAQs and other documentation about the Allegro library, source of the
+ example programs.
+ .
+ Allegro is a cross-platform library intended for use in computer games
+ and other types of multimedia programming. Allegro 5 is the latest major
+ revision of the library, designed to take advantage of modern hardware
+ (e.g. hardware acceleration using 3D cards) and operating systems.
+ Although it is not backwards compatible with earlier versions, it still
+ occupies the same niche and retains a familiar style.

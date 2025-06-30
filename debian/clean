@@ -1,0 +1,7 @@
+addons/audio/kcm_mixer_helpers.inc
+include/allegro5/internal/aintern_convert.h
+include/allegro5/opengl/GLext/gl_ext_alias.h
+include/allegro5/opengl/GLext/glx_ext_alias.h
+include/allegro5/opengl/GLext/wgl_ext_alias.h
+src/convert.c
+src/scanline_drawers.inc

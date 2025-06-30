@@ -1,0 +1,5 @@
+liballegro_physfs.so.5.2 liballegro-physfs5.2t64 #MINVER#
+* Build-depends-package: liballegro-physfs5-dev
+ (regex|optional)"_al_*" 2:5.0.6
+ al_get_allegro_physfs_version@Base 2:5.0.6
+ al_set_physfs_file_interface@Base 2:5.0.6

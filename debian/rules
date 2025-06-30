@@ -1,4 +1,62 @@
 #!/usr/bin/make -f
 
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Use this variable to allow options passed to cmake to be overridable.
+# WANT_EXAMPLES is set to ON only to check if they build successfully,
+# as their source is shipped in the doc package.
+DEB_CMAKE_OPTIONS ?= -DCMAKE_VERBOSE_MAKEFILE=ON \
+		-DCMAKE_INSTALL_PREFIX="/usr" \
+		-DLIB_SUFFIX="/$(DEB_HOST_MULTIARCH)" \
+                -DWANT_DEMO=OFF \
+                -DWANT_EXAMPLES=ON \
+                -DWANT_DOCS=ON \
+                -DWANT_DOCS_HTML=ON \
+                -DWANT_DOCS_MAN=ON
+
+ADDONS = acodec audio image physfs ttf video
+ADDONS_INSTALL = $(ADDONS:%=debian/liballegro-%5.2t64.install)
+ADDONS_DEV_INSTALL = $(ADDONS:%=debian/liballegro-%5-dev.install)
+
+debian/liballegro-%5.2t64.install: debian/liballegro-ADDON5.2t64.install.in debian/rules
+	sed -e 's/ADDON/$*/g' < "$<" > "$@"
+
+debian/liballegro-%5-dev.install: debian/liballegro-ADDON5-dev.install.in debian/rules
+	sed -e 's/ADDON/$*/g' < "$<" > "$@"
+
 %:
-	dh $@
+	dh $@ --builddirectory=build
+
+override_dh_auto_configure:
+# Regenerate generated files.
+	misc/regenerate.sh
+	dh_auto_configure -- $(DEB_CMAKE_OPTIONS)
+
+override_dh_clean:
+	rm -f $(ADDONS_INSTALL) $(ADDONS_DEV_INSTALL)
+	dh_clean
+
+override_dh_auto_install: $(ADDONS_INSTALL) $(ADDONS_DEV_INSTALL)
+	dh_auto_install
+	mkdir -p debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/allegro5/platform
+	mv debian/tmp/usr/include/allegro5/platform/alplatf.h debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/allegro5/platform/alplatf.h
+	sed -i 's@Cflags: -I$${includedir}@Cflags: -I$${includedir}/$(DEB_HOST_MULTIARCH)@' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/allegro-*.pc
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	cd build && tests/test_driver --no-display ../tests/test_*.ini
+endif
+
+override_dh_installchangelogs:
+	dh_installchangelogs docs/src/changes-5.2.txt
+
+override_dh_installexamples-indep:
+	dh_installexamples
+# Delete haiku example, because we are not shipping its data.
+	rm debian/allegro5-doc/usr/share/doc/allegro5-doc/examples/ex_haiku.c
+# Fix permissions
+	find debian/allegro5-doc/usr/share/doc/allegro5-doc/examples -type f -exec chmod 644 \{\} \+
